@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "runtime_version": "v2.5.644",
+  "source_queue_id": "full-database-from-runtime-v2.5.644-final-subs",
+  "model": "qwen",
+  "batch_id": "qwen_batch_093",
+  "batch_index": 93,
+  "recommended_batch_size": 8,
+  "task_count": 5,
+  "task_id_range": [
+    "runtime-1250-psf3",
+    "runtime-1257-sicl2"
+  ],
+  "counts": {
+    "search_required": 5,
+    "review_existing_asset": 0,
+    "difficult": 0,
+    "high_priority": 0,
+    "medium_priority": 0,
+    "low_priority": 5
+  },
+  "tasks": [
+    {
+      "task_id": "runtime-1250-psf3",
+      "database_substance_id": "PSF3",
+      "canonical_substance_id": "psf3",
+      "formula_key": "PSF3",
+      "display_name_en": "Thiophosphoryl fluoride",
+      "assigned_model": "qwen",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1251-sf4",
+      "database_substance_id": "SF4",
+      "canonical_substance_id": "sf4",
+      "formula_key": "SF4",
+      "display_name_en": "Sulfur tetrafluoride",
+      "assigned_model": "qwen",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1253-so2",
+      "database_substance_id": "SO2",
+      "canonical_substance_id": "so2",
+      "formula_key": "SO2",
+      "display_name_en": "Sulfur dioxide",
+      "assigned_model": "qwen",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "ox",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1254-so2f2",
+      "database_substance_id": "SO2F2",
+      "canonical_substance_id": "so2f2",
+      "formula_key": "SO2F2",
+      "display_name_en": "Sulfuryl fluoride",
+      "assigned_model": "qwen",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1257-sicl2",
+      "database_substance_id": "SiCl2",
+      "canonical_substance_id": "sicl2",
+      "formula_key": "SiCl2",
+      "display_name_en": "Silicon dichloride (dichlorosilylene)",
+      "assigned_model": "qwen",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    }
+  ]
+}
