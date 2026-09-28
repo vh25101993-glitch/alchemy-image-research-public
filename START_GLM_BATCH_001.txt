@@ -1,0 +1,8 @@
+Open https://github.com/vh25101993-glitch/alchemy-image-research-public
+
+Read:
+- prompts/GLM_PUBLIC_RESEARCH.md
+- schema/submission.schema.json
+- batches/glm/glm_batch_001.json
+
+Process exactly glm_batch_001. Use web research. Write only claim/submission JSON files. Do not invent provenance or upload binary images.

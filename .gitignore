@@ -1,0 +1,12 @@
+*.apk
+*.aab
+*.jks
+*.keystore
+.env
+.env.*
+secrets.*
+*.pem
+*.key
+database/
+updates/
+private/

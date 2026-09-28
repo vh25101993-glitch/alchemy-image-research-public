@@ -1,0 +1,10 @@
+{
+  "repo_name": "alchemy-image-research-public",
+  "intended_visibility": "public",
+  "runtime_version": "v2.5.644",
+  "runtime_species": 1261,
+  "purpose": "Public GLM/Qwen image-research handoff only",
+  "contains_private_game_source": false,
+  "contains_binary_images": false,
+  "contains_secrets": false
+}
