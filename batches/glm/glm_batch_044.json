@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "runtime_version": "v2.5.644",
+  "source_queue_id": "full-database-from-runtime-v2.5.644-final-subs",
+  "model": "glm",
+  "batch_id": "glm_batch_044",
+  "batch_index": 44,
+  "recommended_batch_size": 12,
+  "task_count": 4,
+  "task_id_range": [
+    "runtime-1258-sif2",
+    "runtime-1261-sii2"
+  ],
+  "counts": {
+    "search_required": 4,
+    "review_existing_asset": 0,
+    "difficult": 0,
+    "high_priority": 0,
+    "medium_priority": 0,
+    "low_priority": 4
+  },
+  "tasks": [
+    {
+      "task_id": "runtime-1258-sif2",
+      "database_substance_id": "SiF2",
+      "canonical_substance_id": "sif2",
+      "formula_key": "SiF2",
+      "display_name_en": "Silicon difluoride",
+      "assigned_model": "glm",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1259-sif4",
+      "database_substance_id": "SiF4",
+      "canonical_substance_id": "sif4",
+      "formula_key": "SiF4",
+      "display_name_en": "Silicon tetrafluoride",
+      "assigned_model": "glm",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1260-sih4",
+      "database_substance_id": "SiH4",
+      "canonical_substance_id": "sih4",
+      "formula_key": "SiH4",
+      "display_name_en": "Silane",
+      "assigned_model": "glm",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    },
+    {
+      "task_id": "runtime-1261-sii2",
+      "database_substance_id": "SiI2",
+      "canonical_substance_id": "sii2",
+      "formula_key": "SiI2",
+      "display_name_en": "Silicon diiodide (diiodosilylene)",
+      "assigned_model": "glm",
+      "difficulty": "standard",
+      "priority": "low",
+      "state": "gas",
+      "category_code": "kh",
+      "species_class": "gas",
+      "recommended_result": "SEARCH",
+      "status": "open"
+    }
+  ]
+}
