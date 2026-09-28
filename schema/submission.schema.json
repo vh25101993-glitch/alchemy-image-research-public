@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "submission.schema.json",
+  "title": "AI substance image research submission",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "canonical_substance_id",
+    "formula_key",
+    "submitted_by",
+    "result_type",
+    "assessment"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^(img-[0-9]{3}|runtime-[0-9]{4})-[a-z0-9_]+$"
+    },
+    "canonical_substance_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "formula_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "submitted_by": {
+      "type": "object",
+      "required": [
+        "model",
+        "agent_id"
+      ],
+      "properties": {
+        "model": {
+          "enum": [
+            "glm",
+            "qwen"
+          ]
+        },
+        "agent_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "result_type": {
+      "enum": [
+        "FOUND",
+        "NO_EXACT_REAL_PHOTO",
+        "REVIEW_EXISTING_ASSET"
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "provider",
+        "source_page_url",
+        "download_url",
+        "file_title",
+        "author",
+        "license",
+        "license_url"
+      ],
+      "properties": {
+        "provider": {
+          "const": "Wikimedia Commons"
+        },
+        "source_page_url": {
+          "type": "string",
+          "pattern": "^https://commons\\.wikimedia\\.org/"
+        },
+        "download_url": {
+          "type": "string",
+          "pattern": "^https://upload\\.wikimedia\\.org/"
+        },
+        "file_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_url": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "confidence",
+        "match_notes"
+      ],
+      "properties": {
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "exact_substance_match": {
+          "type": "boolean"
+        },
+        "real_photo": {
+          "type": "boolean"
+        },
+        "watermark_free": {
+          "type": "boolean"
+        },
+        "open_license": {
+          "type": "boolean"
+        },
+        "existing_asset_acceptable": {
+          "type": "boolean"
+        },
+        "visual_form": {
+          "type": "string"
+        },
+        "species_class": {
+          "type": "string"
+        },
+        "match_notes": {
+          "type": "string",
+          "minLength": 10
+        },
+        "identity_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "search_audit": {
+      "type": "object",
+      "properties": {
+        "queries_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sources_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rejected_candidates": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "fallback_recommendation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "generated_composition_model",
+            "structural_diagram",
+            "reaction_context",
+            "solution_context",
+            "keep_existing_model"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 10
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result_type": {
+            "const": "FOUND"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "candidate",
+          "search_audit"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result_type": {
+            "const": "NO_EXACT_REAL_PHOTO"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "search_audit",
+          "fallback_recommendation"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

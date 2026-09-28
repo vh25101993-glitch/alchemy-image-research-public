@@ -3,8 +3,16 @@
   "intended_visibility": "public",
   "runtime_version": "v2.5.644",
   "runtime_species": 1261,
+  "source_queue_id": "full-database-from-runtime-v2.5.644-final-subs",
+  "assigned_glm": 520,
+  "assigned_qwen": 741,
+  "glm_batch_size": 12,
+  "qwen_batch_size": 8,
+  "glm_batches": 44,
+  "qwen_batches": 93,
   "purpose": "Public GLM/Qwen image-research handoff only",
   "contains_private_game_source": false,
+  "contains_reaction_database": false,
   "contains_binary_images": false,
   "contains_secrets": false
 }
