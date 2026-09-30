@@ -1,0 +1,49 @@
+name: Build verified substance assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sources/verified_batch_001.json'
+      - 'tools/build_verified_assets.py'
+      - '.github/workflows/build-verified-substance-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-verified-substance-assets
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check pillow requests
+
+      - name: Build verified WebP assets
+        run: python tools/build_verified_assets.py --manifest sources/verified_batch_001.json
+
+      - name: Commit generated assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated
+          if git diff --cached --quiet; then
+            echo "No generated asset changes."
+            exit 0
+          fi
+          git commit -m "assets: build verified substance image batch 001"
+          git push
