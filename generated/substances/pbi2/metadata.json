@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "canonical_substance_id": "pbi2",
+  "database_substance_id": "PbI2",
+  "formula": "PbI2",
+  "display_name_en": "Lead(II) iodide",
+  "asset_revision": 1,
+  "files": {
+    "primary": "primary.webp",
+    "thumbnail": "thumb.webp"
+  },
+  "representation": {
+    "visual_scope": "real precipitated lead(II) iodide sample photograph",
+    "fit_mode": "contain",
+    "background": "#F3F5F7",
+    "primary_size": [
+      768,
+      768
+    ],
+    "thumbnail_size": [
+      256,
+      256
+    ]
+  },
+  "provenance": {
+    "source_type": "verified real photograph",
+    "provider": "Wikimedia Commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide_sample.jpg",
+    "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+    "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+    "source_file_title": "File:Lead(II) iodide sample.jpg",
+    "author": "Adam Rędzikowski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_content_type": "image/jpeg",
+    "source_sha256": "e1d91cfe08be4df7f343d5365272b400583b4e1793377508125a04a42821b81f",
+    "verified_by": "ChatGPT manual web verification",
+    "verified_date": "2026-09-30"
+  },
+  "asset_integrity": {
+    "primary_sha256": "cb925d96f56324787e67d7efa3c8d027951f217dd089caaf40a380df55c4e688",
+    "thumbnail_sha256": "efe60c62e4b55749e53e953007c5f3520e3e439da69018cdb6e3f2bac43468be",
+    "primary_bytes": 21476,
+    "thumbnail_bytes": 4284,
+    "primary_webp_quality": 82,
+    "thumbnail_webp_quality": 78
+  },
+  "chemistry_authority": "database only; this file is visual metadata"
+}

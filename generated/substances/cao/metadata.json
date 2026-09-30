@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "canonical_substance_id": "cao",
+  "database_substance_id": "CaO",
+  "formula": "CaO",
+  "display_name_en": "Calcium oxide (quicklime)",
+  "asset_revision": 1,
+  "files": {
+    "primary": "primary.webp",
+    "thumbnail": "thumb.webp"
+  },
+  "representation": {
+    "visual_scope": "real calcium oxide powder photograph",
+    "fit_mode": "contain",
+    "background": "#F3F5F7",
+    "primary_size": [
+      768,
+      768
+    ],
+    "thumbnail_size": [
+      256,
+      256
+    ]
+  },
+  "provenance": {
+    "source_type": "verified real photograph",
+    "provider": "Wikimedia Commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Calcium_oxide_powder.JPG",
+    "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Calcium_oxide_powder.JPG",
+    "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Calcium_oxide_powder.JPG",
+    "source_file_title": "File:Calcium oxide powder.JPG",
+    "author": "Leiem",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_content_type": "image/jpeg",
+    "source_sha256": "6b55fcb64da5a2d331ad8340eb786bc737cc50898d5f00196f213d6f9b4d1a6b",
+    "verified_by": "ChatGPT manual web verification",
+    "verified_date": "2026-09-30"
+  },
+  "asset_integrity": {
+    "primary_sha256": "d280745a62315d39761cec97c989cde0980d4108856650e3912848a301b340ed",
+    "thumbnail_sha256": "75b8ddafdaa6aa878dd8889e2924b419b6ed6aece27f216f8002f7526cfc3fa4",
+    "primary_bytes": 40948,
+    "thumbnail_bytes": 6060,
+    "primary_webp_quality": 82,
+    "thumbnail_webp_quality": 78
+  },
+  "chemistry_authority": "database only; this file is visual metadata"
+}

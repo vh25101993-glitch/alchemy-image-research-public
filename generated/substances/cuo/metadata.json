@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "canonical_substance_id": "cuo",
+  "database_substance_id": "CuO",
+  "formula": "CuO",
+  "display_name_en": "Copper(II) oxide",
+  "asset_revision": 1,
+  "files": {
+    "primary": "primary.webp",
+    "thumbnail": "thumb.webp"
+  },
+  "representation": {
+    "visual_scope": "real copper(II) oxide powder photograph",
+    "fit_mode": "contain",
+    "background": "#F3F5F7",
+    "primary_size": [
+      768,
+      768
+    ],
+    "thumbnail_size": [
+      256,
+      256
+    ]
+  },
+  "provenance": {
+    "source_type": "verified real photograph",
+    "provider": "Wikimedia Commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Copper(II)_oxide_sample.jpg",
+    "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+    "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+    "source_file_title": "File:Copper(II) oxide sample.jpg",
+    "author": "Adam Rędzikowski",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source_content_type": "image/jpeg",
+    "source_sha256": "477e84f1bd5e3062cd729e6219a83d0d2f4549c4e6c8948b601c7c7d446b543e",
+    "verified_by": "ChatGPT manual web verification",
+    "verified_date": "2026-09-30"
+  },
+  "asset_integrity": {
+    "primary_sha256": "6fdbe0c13b25888dbbf7e60ad8cbd222474ed2f03b039b7c6b2e8b1801607088",
+    "thumbnail_sha256": "673d1d65a4a7cabb5fc5198defd405a2997a90a055b88c0dc00683ed27c8c1c0",
+    "primary_bytes": 29932,
+    "thumbnail_bytes": 4608,
+    "primary_webp_quality": 82,
+    "thumbnail_webp_quality": 78
+  },
+  "chemistry_authority": "database only; this file is visual metadata"
+}

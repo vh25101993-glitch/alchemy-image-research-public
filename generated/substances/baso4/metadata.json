@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "canonical_substance_id": "baso4",
+  "database_substance_id": "BaSO4",
+  "formula": "BaSO4",
+  "display_name_en": "Barium sulfate",
+  "asset_revision": 1,
+  "files": {
+    "primary": "primary.webp",
+    "thumbnail": "thumb.webp"
+  },
+  "representation": {
+    "visual_scope": "real mineral specimen photograph",
+    "fit_mode": "contain",
+    "background": "#F3F5F7",
+    "primary_size": [
+      768,
+      768
+    ],
+    "thumbnail_size": [
+      256,
+      256
+    ]
+  },
+  "provenance": {
+    "source_type": "verified real photograph",
+    "provider": "Wikimedia Commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Barium_sulfate,_Baryte.jpg",
+    "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Barium_sulfate%2C_Baryte.jpg",
+    "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Barium_sulfate%2C_Baryte.jpg",
+    "source_file_title": "File:Barium sulfate, Baryte.jpg",
+    "author": "Bobjgalindo",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_content_type": "image/jpeg",
+    "source_sha256": "07d01c7f945180f912b97b95b48f0a2aa1d2b8b0690d1505b2f1d8e5d283f58a",
+    "verified_by": "ChatGPT manual web verification",
+    "verified_date": "2026-09-30"
+  },
+  "asset_integrity": {
+    "primary_sha256": "5e367d57f31210cfeefd67053fb32fd15e83e4c16f902c86f9909a3898a1ec5e",
+    "thumbnail_sha256": "703caab8eb47e1d0329a0bc938c64009b6c66eeb1fa7c665d9e4a6989974f58b",
+    "primary_bytes": 24342,
+    "thumbnail_bytes": 3864,
+    "primary_webp_quality": 82,
+    "thumbnail_webp_quality": 78
+  },
+  "chemistry_authority": "database only; this file is visual metadata"
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "canonical_substance_id": "fes2",
+  "database_substance_id": "FeS2",
+  "formula": "FeS2",
+  "display_name_en": "Iron disulfide (pyrite)",
+  "asset_revision": 1,
+  "files": {
+    "primary": "primary.webp",
+    "thumbnail": "thumb.webp"
+  },
+  "representation": {
+    "visual_scope": "real pyrite mineral crystal photograph",
+    "fit_mode": "contain",
+    "background": "#F3F5F7",
+    "primary_size": [
+      768,
+      768
+    ],
+    "thumbnail_size": [
+      256,
+      256
+    ]
+  },
+  "provenance": {
+    "source_type": "verified real photograph",
+    "provider": "Wikimedia Commons",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Pyrite_Pyrit_FeS2.jpg",
+    "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pyrite_Pyrit_FeS2.jpg",
+    "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pyrite_Pyrit_FeS2.jpg",
+    "source_file_title": "File:Pyrite Pyrit FeS2.jpg",
+    "author": "JanDerChemiker",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source_content_type": "image/jpeg",
+    "source_sha256": "2e1944311b936b5bb4b9b553b2ca5d839c536d2631eee0055a8363d5afd8d2e7",
+    "verified_by": "ChatGPT manual web verification",
+    "verified_date": "2026-09-30"
+  },
+  "asset_integrity": {
+    "primary_sha256": "e0cbb0cb34dc21ecb36a2622c3dc7c3334e5c3ef2021ddf8d4a34b26be4971a2",
+    "thumbnail_sha256": "7f7c0684b843521e411e476e6ddbe3403765d17ba54b8ce3a86e49fac2c2cfce",
+    "primary_bytes": 97622,
+    "thumbnail_bytes": 11780,
+    "primary_webp_quality": 82,
+    "thumbnail_webp_quality": 78
+  },
+  "chemistry_authority": "database only; this file is visual metadata"
+}

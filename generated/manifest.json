@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "source_manifest": "sources/verified_batch_001.json",
+  "count": 5,
+  "entries": [
+    {
+      "schema_version": 2,
+      "canonical_substance_id": "baso4",
+      "database_substance_id": "BaSO4",
+      "formula": "BaSO4",
+      "display_name_en": "Barium sulfate",
+      "asset_revision": 1,
+      "files": {
+        "primary": "primary.webp",
+        "thumbnail": "thumb.webp"
+      },
+      "representation": {
+        "visual_scope": "real mineral specimen photograph",
+        "fit_mode": "contain",
+        "background": "#F3F5F7",
+        "primary_size": [
+          768,
+          768
+        ],
+        "thumbnail_size": [
+          256,
+          256
+        ]
+      },
+      "provenance": {
+        "source_type": "verified real photograph",
+        "provider": "Wikimedia Commons",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Barium_sulfate,_Baryte.jpg",
+        "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Barium_sulfate%2C_Baryte.jpg",
+        "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Barium_sulfate%2C_Baryte.jpg",
+        "source_file_title": "File:Barium sulfate, Baryte.jpg",
+        "author": "Bobjgalindo",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_content_type": "image/jpeg",
+        "source_sha256": "07d01c7f945180f912b97b95b48f0a2aa1d2b8b0690d1505b2f1d8e5d283f58a",
+        "verified_by": "ChatGPT manual web verification",
+        "verified_date": "2026-09-30"
+      },
+      "asset_integrity": {
+        "primary_sha256": "5e367d57f31210cfeefd67053fb32fd15e83e4c16f902c86f9909a3898a1ec5e",
+        "thumbnail_sha256": "703caab8eb47e1d0329a0bc938c64009b6c66eeb1fa7c665d9e4a6989974f58b",
+        "primary_bytes": 24342,
+        "thumbnail_bytes": 3864,
+        "primary_webp_quality": 82,
+        "thumbnail_webp_quality": 78
+      },
+      "chemistry_authority": "database only; this file is visual metadata"
+    },
+    {
+      "schema_version": 2,
+      "canonical_substance_id": "cao",
+      "database_substance_id": "CaO",
+      "formula": "CaO",
+      "display_name_en": "Calcium oxide (quicklime)",
+      "asset_revision": 1,
+      "files": {
+        "primary": "primary.webp",
+        "thumbnail": "thumb.webp"
+      },
+      "representation": {
+        "visual_scope": "real calcium oxide powder photograph",
+        "fit_mode": "contain",
+        "background": "#F3F5F7",
+        "primary_size": [
+          768,
+          768
+        ],
+        "thumbnail_size": [
+          256,
+          256
+        ]
+      },
+      "provenance": {
+        "source_type": "verified real photograph",
+        "provider": "Wikimedia Commons",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Calcium_oxide_powder.JPG",
+        "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Calcium_oxide_powder.JPG",
+        "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Calcium_oxide_powder.JPG",
+        "source_file_title": "File:Calcium oxide powder.JPG",
+        "author": "Leiem",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_content_type": "image/jpeg",
+        "source_sha256": "6b55fcb64da5a2d331ad8340eb786bc737cc50898d5f00196f213d6f9b4d1a6b",
+        "verified_by": "ChatGPT manual web verification",
+        "verified_date": "2026-09-30"
+      },
+      "asset_integrity": {
+        "primary_sha256": "d280745a62315d39761cec97c989cde0980d4108856650e3912848a301b340ed",
+        "thumbnail_sha256": "75b8ddafdaa6aa878dd8889e2924b419b6ed6aece27f216f8002f7526cfc3fa4",
+        "primary_bytes": 40948,
+        "thumbnail_bytes": 6060,
+        "primary_webp_quality": 82,
+        "thumbnail_webp_quality": 78
+      },
+      "chemistry_authority": "database only; this file is visual metadata"
+    },
+    {
+      "schema_version": 2,
+      "canonical_substance_id": "cuo",
+      "database_substance_id": "CuO",
+      "formula": "CuO",
+      "display_name_en": "Copper(II) oxide",
+      "asset_revision": 1,
+      "files": {
+        "primary": "primary.webp",
+        "thumbnail": "thumb.webp"
+      },
+      "representation": {
+        "visual_scope": "real copper(II) oxide powder photograph",
+        "fit_mode": "contain",
+        "background": "#F3F5F7",
+        "primary_size": [
+          768,
+          768
+        ],
+        "thumbnail_size": [
+          256,
+          256
+        ]
+      },
+      "provenance": {
+        "source_type": "verified real photograph",
+        "provider": "Wikimedia Commons",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Copper(II)_oxide_sample.jpg",
+        "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+        "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+        "source_file_title": "File:Copper(II) oxide sample.jpg",
+        "author": "Adam Rędzikowski",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "source_content_type": "image/jpeg",
+        "source_sha256": "477e84f1bd5e3062cd729e6219a83d0d2f4549c4e6c8948b601c7c7d446b543e",
+        "verified_by": "ChatGPT manual web verification",
+        "verified_date": "2026-09-30"
+      },
+      "asset_integrity": {
+        "primary_sha256": "6fdbe0c13b25888dbbf7e60ad8cbd222474ed2f03b039b7c6b2e8b1801607088",
+        "thumbnail_sha256": "673d1d65a4a7cabb5fc5198defd405a2997a90a055b88c0dc00683ed27c8c1c0",
+        "primary_bytes": 29932,
+        "thumbnail_bytes": 4608,
+        "primary_webp_quality": 82,
+        "thumbnail_webp_quality": 78
+      },
+      "chemistry_authority": "database only; this file is visual metadata"
+    },
+    {
+      "schema_version": 2,
+      "canonical_substance_id": "fes2",
+      "database_substance_id": "FeS2",
+      "formula": "FeS2",
+      "display_name_en": "Iron disulfide (pyrite)",
+      "asset_revision": 1,
+      "files": {
+        "primary": "primary.webp",
+        "thumbnail": "thumb.webp"
+      },
+      "representation": {
+        "visual_scope": "real pyrite mineral crystal photograph",
+        "fit_mode": "contain",
+        "background": "#F3F5F7",
+        "primary_size": [
+          768,
+          768
+        ],
+        "thumbnail_size": [
+          256,
+          256
+        ]
+      },
+      "provenance": {
+        "source_type": "verified real photograph",
+        "provider": "Wikimedia Commons",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Pyrite_Pyrit_FeS2.jpg",
+        "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pyrite_Pyrit_FeS2.jpg",
+        "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pyrite_Pyrit_FeS2.jpg",
+        "source_file_title": "File:Pyrite Pyrit FeS2.jpg",
+        "author": "JanDerChemiker",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "source_content_type": "image/jpeg",
+        "source_sha256": "2e1944311b936b5bb4b9b553b2ca5d839c536d2631eee0055a8363d5afd8d2e7",
+        "verified_by": "ChatGPT manual web verification",
+        "verified_date": "2026-09-30"
+      },
+      "asset_integrity": {
+        "primary_sha256": "e0cbb0cb34dc21ecb36a2622c3dc7c3334e5c3ef2021ddf8d4a34b26be4971a2",
+        "thumbnail_sha256": "7f7c0684b843521e411e476e6ddbe3403765d17ba54b8ce3a86e49fac2c2cfce",
+        "primary_bytes": 97622,
+        "thumbnail_bytes": 11780,
+        "primary_webp_quality": 82,
+        "thumbnail_webp_quality": 78
+      },
+      "chemistry_authority": "database only; this file is visual metadata"
+    },
+    {
+      "schema_version": 2,
+      "canonical_substance_id": "pbi2",
+      "database_substance_id": "PbI2",
+      "formula": "PbI2",
+      "display_name_en": "Lead(II) iodide",
+      "asset_revision": 1,
+      "files": {
+        "primary": "primary.webp",
+        "thumbnail": "thumb.webp"
+      },
+      "representation": {
+        "visual_scope": "real precipitated lead(II) iodide sample photograph",
+        "fit_mode": "contain",
+        "background": "#F3F5F7",
+        "primary_size": [
+          768,
+          768
+        ],
+        "thumbnail_size": [
+          256,
+          256
+        ]
+      },
+      "provenance": {
+        "source_type": "verified real photograph",
+        "provider": "Wikimedia Commons",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide_sample.jpg",
+        "original_download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+        "fetched_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+        "source_file_title": "File:Lead(II) iodide sample.jpg",
+        "author": "Adam Rędzikowski",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_content_type": "image/jpeg",
+        "source_sha256": "e1d91cfe08be4df7f343d5365272b400583b4e1793377508125a04a42821b81f",
+        "verified_by": "ChatGPT manual web verification",
+        "verified_date": "2026-09-30"
+      },
+      "asset_integrity": {
+        "primary_sha256": "cb925d96f56324787e67d7efa3c8d027951f217dd089caaf40a380df55c4e688",
+        "thumbnail_sha256": "efe60c62e4b55749e53e953007c5f3520e3e439da69018cdb6e3f2bac43468be",
+        "primary_bytes": 21476,
+        "thumbnail_bytes": 4284,
+        "primary_webp_quality": 82,
+        "thumbnail_webp_quality": 78
+      },
+      "chemistry_authority": "database only; this file is visual metadata"
+    }
+  ]
+}
