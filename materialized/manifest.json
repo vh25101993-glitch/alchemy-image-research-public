@@ -3,7 +3,7 @@
     "file_title": "File:Baryte (BaSO4) (13401293814).jpg",
     "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Baryte_%28BaSO4%29_%2813401293814%29.jpg/1280px-Baryte_%28BaSO4%29_%2813401293814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "content_type": "image/jpeg",
-    "source_sha256": "59e7d415b24e3356f549197266629ffb2e46808ee446c8f3e6fefb008aa21047",
+    "source_sha256": "3d9cad6e79d687161a3a39ffb107953b0cf786b7e75991b0b1547b3b5bd4e71a",
     "source_size": [
       1280,
       960
@@ -106,5 +106,41 @@
     ],
     "primary": "materialized/pbi2.webp",
     "thumbnail": "materialized/pbi2.thumb.webp"
+  },
+  "sic": {
+    "file_title": "File:Silicon Carbide.jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Silicon_Carbide.jpg/1280px-Silicon_Carbide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "94c993a06b11c4d7693bbf9d4f1ab5cc80436c4e0bc5358b502445f11ce9bd97",
+    "source_size": [
+      1280,
+      853
+    ],
+    "primary": "materialized/sic.webp",
+    "thumbnail": "materialized/sic.thumb.webp"
+  },
+  "sno2": {
+    "file_title": "File:Casiterita.jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Casiterita.jpg/1280px-Casiterita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "4aebab25f38cb15c8ad951f5b57fded75440bbb6a2e2313bdb927ad3355cef91",
+    "source_size": [
+      1280,
+      746
+    ],
+    "primary": "materialized/sno2.webp",
+    "thumbnail": "materialized/sno2.thumb.webp"
+  },
+  "nh42coscn4dd": {
+    "file_title": "File:Ammonium Tetrathiocyanatocobalt(II).jpg",
+    "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ammonium_Tetrathiocyanatocobalt%28II%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "content_type": "image/jpeg",
+    "source_sha256": "0f66593318913e99aa06e4dd86bee40013b711f23cdba9577e298aeeef14c0f1",
+    "source_size": [
+      1200,
+      1600
+    ],
+    "primary": "materialized/nh42coscn4dd.webp",
+    "thumbnail": "materialized/nh42coscn4dd.thumb.webp"
   }
 }
