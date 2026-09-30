@@ -1,0 +1,37 @@
+name: Package materialized chemistry images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/package-materialized-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify materialized image set
+        run: |
+          test -f materialized/manifest.json
+          test "$(find materialized -maxdepth 1 -name '*.webp' | wc -l)" -eq 18
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('materialized/manifest.json').read_text())
+          assert len(m)==9, len(m)
+          print('verified species:', ', '.join(sorted(m)))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-chemistry-images-v1
+          path: materialized/
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 7
