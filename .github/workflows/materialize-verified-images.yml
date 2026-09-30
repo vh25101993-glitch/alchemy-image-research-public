@@ -1,6 +1,11 @@
 name: Materialize verified chemistry images
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/materialize-verified-images.yml'
   workflow_dispatch:
 
 permissions:
@@ -45,8 +50,7 @@ jobs:
                   fitted = ImageOps.contain(src, (768,768), method=Image.Resampling.LANCZOS)
                   canvas = Image.new('RGB', (768,768), (243,245,247))
                   canvas.paste(fitted, ((768-fitted.width)//2,(768-fitted.height)//2))
-                  out = root / f'{sid}.webp'
-                  canvas.save(out, 'WEBP', quality=82, method=6)
+                  canvas.save(root / f'{sid}.webp', 'WEBP', quality=82, method=6)
                   thumb_fit = ImageOps.contain(src, (256,256), method=Image.Resampling.LANCZOS)
                   thumb = Image.new('RGB', (256,256), (243,245,247))
                   thumb.paste(thumb_fit, ((256-thumb_fit.width)//2,(256-thumb_fit.height)//2))
