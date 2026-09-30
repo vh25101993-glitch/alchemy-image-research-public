@@ -1,0 +1,110 @@
+{
+  "baso4": {
+    "file_title": "File:Baryte (BaSO4) (13401293814).jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Baryte_%28BaSO4%29_%2813401293814%29.jpg/1280px-Baryte_%28BaSO4%29_%2813401293814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "59e7d415b24e3356f549197266629ffb2e46808ee446c8f3e6fefb008aa21047",
+    "source_size": [
+      1280,
+      960
+    ],
+    "primary": "materialized/baso4.webp",
+    "thumbnail": "materialized/baso4.thumb.webp"
+  },
+  "cacl2": {
+    "file_title": "File:Calcium chloride CaCl2.jpg",
+    "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Calcium_chloride_CaCl2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "content_type": "image/jpeg",
+    "source_sha256": "fee9a9f10e2d7762373a0b1dacedc37fd7eed9fb2b8d5b03d155b8a59bebcc45",
+    "source_size": [
+      1280,
+      960
+    ],
+    "primary": "materialized/cacl2.webp",
+    "thumbnail": "materialized/cacl2.thumb.webp"
+  },
+  "cao": {
+    "file_title": "File:Calcium oxide.JPG",
+    "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Calcium_oxide.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "content_type": "image/jpeg",
+    "source_sha256": "5d584dc35f5cc5fbd188be83f198ab1feb49b9b65e912baebcef52da57677590",
+    "source_size": [
+      626,
+      553
+    ],
+    "primary": "materialized/cao.webp",
+    "thumbnail": "materialized/cao.thumb.webp"
+  },
+  "caso4": {
+    "file_title": "File:Anhydrite HMNH1.jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Anhydrite_HMNH1.jpg/1280px-Anhydrite_HMNH1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "e5bf8e2f96320f0225eed486a9e715141a1b4de3633a4edbedfc47cb96907086",
+    "source_size": [
+      1280,
+      1332
+    ],
+    "primary": "materialized/caso4.webp",
+    "thumbnail": "materialized/caso4.thumb.webp"
+  },
+  "cuo": {
+    "file_title": "File:Copper(II) oxide sample.jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Copper%28II%29_oxide_sample.jpg/1280px-Copper%28II%29_oxide_sample.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "e9c3ca08294d809b94a4b2009f2748ff2e0849f2d0037cf856f3806a97879b00",
+    "source_size": [
+      1280,
+      800
+    ],
+    "primary": "materialized/cuo.webp",
+    "thumbnail": "materialized/cuo.thumb.webp"
+  },
+  "fes2": {
+    "file_title": "File:Pyrite Pyrit FeS2.jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pyrite_Pyrit_FeS2.jpg/1280px-Pyrite_Pyrit_FeS2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "09e4ef6ada5e4f34bdc8982dfc58730e3d93a93780fb126bf6c6bedcd6fe7a9b",
+    "source_size": [
+      1280,
+      1010
+    ],
+    "primary": "materialized/fes2.webp",
+    "thumbnail": "materialized/fes2.thumb.webp"
+  },
+  "feso4": {
+    "file_title": "File:FeSO4 (раствор железного купороса).jpg",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/FeSO4_%28%D1%80%D0%B0%D1%81%D1%82%D0%B2%D0%BE%D1%80_%D0%B6%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D1%83%D0%BF%D0%BE%D1%80%D0%BE%D1%81%D0%B0%29.jpg/1280px-FeSO4_%28%D1%80%D0%B0%D1%81%D1%82%D0%B2%D0%BE%D1%80_%D0%B6%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D1%83%D0%BF%D0%BE%D1%80%D0%BE%D1%81%D0%B0%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "8d9a3f0aad1b65ac7f28cd90542d6d794c7f1b33b2b0ca75becf802702e136da",
+    "source_size": [
+      1280,
+      1007
+    ],
+    "primary": "materialized/feso4.webp",
+    "thumbnail": "materialized/feso4.thumb.webp"
+  },
+  "hgs": {
+    "file_title": "File:Cinnabar (HgS).jpg",
+    "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Cinnabar_%28HgS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "content_type": "image/jpeg",
+    "source_sha256": "12854e9a52b89fb80472f0ae8e8490977178e1dc0e5004c6057bd8af63e0b9ea",
+    "source_size": [
+      1152,
+      1152
+    ],
+    "primary": "materialized/hgs.webp",
+    "thumbnail": "materialized/hgs.thumb.webp"
+  },
+  "pbi2": {
+    "file_title": "File:Lead(II) iodide.JPG",
+    "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Lead%28II%29_iodide.JPG/1280px-Lead%28II%29_iodide.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "content_type": "image/jpeg",
+    "source_sha256": "23fdcb6a99f6b89cc62ddc464bed3a8259859242532311368d7b1490c67cd23a",
+    "source_size": [
+      1280,
+      1346
+    ],
+    "primary": "materialized/pbi2.webp",
+    "thumbnail": "materialized/pbi2.thumb.webp"
+  }
+}
