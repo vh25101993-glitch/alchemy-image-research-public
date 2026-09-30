@@ -1,5 +1,79 @@
 {
+  "schema_version": 1,
   "batch_id": "verified_batch_001",
-  "source_repo": "alchemy-chemistry-database/assets/substance-images",
-  "status": "prepared"
+  "verified_date": "2026-09-30",
+  "target_private_repo": "vh25101993-glitch/alchemy-chemistry-database",
+  "target_branch": "assets/substance-images",
+  "entries": [
+    {
+      "task_id": "runtime-0001-baso4",
+      "database_substance_id": "BaSO4",
+      "canonical_substance_id": "baso4",
+      "formula_key": "BaSO4",
+      "display_name_en": "Barium sulfate",
+      "visual_scope": "real mineral specimen photograph",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Barium_sulfate,_Baryte.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Barium_sulfate%2C_Baryte.jpg",
+      "file_title": "File:Barium sulfate, Baryte.jpg",
+      "author": "Bobjgalindo",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "task_id": "runtime-0003-cao",
+      "database_substance_id": "CaO",
+      "canonical_substance_id": "cao",
+      "formula_key": "CaO",
+      "display_name_en": "Calcium oxide (quicklime)",
+      "visual_scope": "real calcium oxide powder photograph",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Calcium_oxide_powder.JPG",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Calcium_oxide_powder.JPG",
+      "file_title": "File:Calcium oxide powder.JPG",
+      "author": "Leiem",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "task_id": "runtime-0006-cuo",
+      "database_substance_id": "CuO",
+      "canonical_substance_id": "cuo",
+      "formula_key": "CuO",
+      "display_name_en": "Copper(II) oxide",
+      "visual_scope": "real copper(II) oxide powder photograph",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Copper(II)_oxide_sample.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+      "file_title": "File:Copper(II) oxide sample.jpg",
+      "author": "Adam Rędzikowski",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "task_id": "runtime-0007-fes2",
+      "database_substance_id": "FeS2",
+      "canonical_substance_id": "fes2",
+      "formula_key": "FeS2",
+      "display_name_en": "Iron disulfide (pyrite)",
+      "visual_scope": "real pyrite mineral crystal photograph",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Pyrite_Pyrit_FeS2.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pyrite_Pyrit_FeS2.jpg",
+      "file_title": "File:Pyrite Pyrit FeS2.jpg",
+      "author": "JanDerChemiker",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "task_id": "runtime-0019-pbi2",
+      "database_substance_id": "PbI2",
+      "canonical_substance_id": "pbi2",
+      "formula_key": "PbI2",
+      "display_name_en": "Lead(II) iodide",
+      "visual_scope": "real precipitated lead(II) iodide sample photograph",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide_sample.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+      "file_title": "File:Lead(II) iodide sample.jpg",
+      "author": "Adam Rędzikowski",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ]
 }
