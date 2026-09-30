@@ -6,6 +6,7 @@ import base64
 import hashlib
 import io
 import json
+import time
 from pathlib import Path
 
 import requests
@@ -16,6 +17,7 @@ BG = (243, 245, 247)
 PRIMARY = 768
 THUMB = 256
 MAX_BYTES = 20 * 1024 * 1024
+UA = "AlchemyChemistryImageBuilder/1.1 (+https://github.com/vh25101993-glitch/alchemy-image-research-public)"
 
 
 def read_json(path: Path):
@@ -27,9 +29,39 @@ def write_json(path: Path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def fetch(url: str) -> tuple[bytes, str]:
-    headers = {"User-Agent": "AlchemyChemistryImageBuilder/1.0"}
+def commons_thumb_url(file_title: str, width: int = 1280) -> str | None:
+    params = {
+        "action": "query",
+        "format": "json",
+        "prop": "imageinfo",
+        "iiprop": "url",
+        "iiurlwidth": str(width),
+        "titles": file_title,
+        "origin": "*",
+    }
+    r = requests.get(
+        "https://commons.wikimedia.org/w/api.php",
+        params=params,
+        headers={"User-Agent": UA},
+        timeout=45,
+    )
+    r.raise_for_status()
+    data = r.json()
+    for page in data.get("query", {}).get("pages", {}).values():
+        info = (page.get("imageinfo") or [{}])[0]
+        return info.get("thumburl") or info.get("url")
+    return None
+
+
+def fetch_one(url: str) -> tuple[bytes, str]:
+    headers = {
+        "User-Agent": UA,
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Referer": "https://commons.wikimedia.org/",
+    }
     with requests.get(url, headers=headers, timeout=60, stream=True) as r:
+        if r.status_code == 429:
+            raise requests.HTTPError("429 rate limited", response=r)
         r.raise_for_status()
         ctype = r.headers.get("content-type", "")
         if not ctype.startswith("image/"):
@@ -44,6 +76,29 @@ def fetch(url: str) -> tuple[bytes, str]:
                 raise RuntimeError(f"Source exceeds {MAX_BYTES} bytes")
             chunks.append(chunk)
     return b"".join(chunks), ctype
+
+
+def fetch(entry: dict) -> tuple[bytes, str, str]:
+    urls = [entry["download_url"]]
+    try:
+        thumb = commons_thumb_url(entry["file_title"], 1280)
+        if thumb and thumb not in urls:
+            urls.append(thumb)
+    except Exception as exc:
+        print(f"WARN Commons API lookup failed for {entry['file_title']}: {exc}")
+
+    last_error = None
+    for url in urls:
+        for delay in (0, 3, 8):
+            if delay:
+                time.sleep(delay)
+            try:
+                raw, ctype = fetch_one(url)
+                return raw, ctype, url
+            except Exception as exc:
+                last_error = exc
+                print(f"WARN fetch failed: {url}: {exc}")
+    raise RuntimeError(f"All fetch attempts failed for {entry['file_title']}: {last_error}")
 
 
 def square_contain(raw: bytes, size: int) -> Image.Image:
@@ -84,7 +139,7 @@ def main() -> int:
     generated = []
     for entry in manifest["entries"]:
         sid = entry["canonical_substance_id"]
-        raw, ctype = fetch(entry["download_url"])
+        raw, ctype, fetched_url = fetch(entry)
         source_sha256 = hashlib.sha256(raw).hexdigest()
 
         primary_img = square_contain(raw, PRIMARY)
@@ -118,7 +173,8 @@ def main() -> int:
                 "source_type": "verified real photograph",
                 "provider": "Wikimedia Commons",
                 "source_page": entry["source_page_url"],
-                "download_url": entry["download_url"],
+                "original_download_url": entry["download_url"],
+                "fetched_image_url": fetched_url,
                 "source_file_title": entry["file_title"],
                 "author": entry["author"],
                 "license": entry["license"],
@@ -140,7 +196,8 @@ def main() -> int:
         }
         write_json(out / "metadata.json", metadata)
         generated.append(metadata)
-        print(f"BUILT {sid}: primary={len(primary_bytes)} thumb={len(thumb_bytes)}")
+        print(f"BUILT {sid}: primary={len(primary_bytes)} thumb={len(thumb_bytes)} source={fetched_url}")
+        time.sleep(1)
 
     write_json(ROOT / "generated" / "manifest.json", {
         "schema_version": 1,
