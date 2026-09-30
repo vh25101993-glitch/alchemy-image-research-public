@@ -20,17 +20,17 @@ jobs:
       - name: Verify materialized image set
         run: |
           test -f materialized/manifest.json
-          test "$(find materialized -maxdepth 1 -name '*.webp' | wc -l)" -eq 18
+          test "$(find materialized -maxdepth 1 -name '*.webp' | wc -l)" -eq 24
           python - <<'PY'
           import json
           from pathlib import Path
           m=json.loads(Path('materialized/manifest.json').read_text())
-          assert len(m)==9, len(m)
+          assert len(m)==12, len(m)
           print('verified species:', ', '.join(sorted(m)))
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: verified-chemistry-images-v1
+          name: verified-chemistry-images-v2
           path: materialized/
           if-no-files-found: error
           compression-level: 6
