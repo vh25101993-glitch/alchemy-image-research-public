@@ -14,7 +14,7 @@ permissions:
 jobs:
   materialize:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,7 +40,10 @@ jobs:
             'fes2': 'File:Pyrite Pyrit FeS2.jpg',
             'feso4': 'File:FeSO4 (раствор железного купороса).jpg',
             'hgs': 'File:Cinnabar (HgS).jpg',
-            'pbi2': 'File:Lead(II) iodide.JPG'
+            'pbi2': 'File:Lead(II) iodide.JPG',
+            'sic': 'File:Silicon Carbide.jpg',
+            'sno2': 'File:Casiterita.jpg',
+            'nh42coscn4dd': 'File:Ammonium Tetrathiocyanatocobalt(II).jpg'
           }
 
           UA = 'HoaHocAlchemyImageResearch/1.0 (https://github.com/vh25101993-glitch/alchemy-image-research-public; contact: vh25101993@gmail.com)'
