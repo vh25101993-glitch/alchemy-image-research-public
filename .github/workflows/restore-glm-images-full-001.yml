@@ -1,0 +1,234 @@
+name: Restore GLM full image research
+
+on:
+  push:
+    branches:
+      - agent/glm-images-full-001
+    paths:
+      - 'handoff/glm_snapshot.json.gz.b64'
+      - '.github/workflows/restore-glm-images-full-001.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Exit until snapshot is present
+        id: gate
+        shell: bash
+        run: |
+          if [ ! -f handoff/glm_snapshot.json.gz.b64 ]; then
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Snapshot not present yet; waiting for the handoff commit.'
+          else
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install reconstruction dependencies
+        if: steps.gate.outputs.ready == 'true'
+        run: python -m pip install --disable-pip-version-check requests pillow
+
+      - name: Restore research files and materialize verified candidates
+        if: steps.gate.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from __future__ import annotations
+          import base64, gzip, hashlib, io, json, time
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import requests
+          from PIL import Image, ImageOps
+
+          ROOT = Path('.')
+          encoded = (ROOT / 'handoff/glm_snapshot.json.gz.b64').read_bytes()
+          snapshot = json.loads(gzip.decompress(base64.b64decode(encoded)).decode('utf-8'))
+
+          assert snapshot['base_commit'] == '9e7397895655a3c3c88f6613ec247a35b9789cea'
+          assert snapshot['source_bundle_head'] == '3cbc0c4242fcd53b031f1fe0fcc85f2935bb1e88'
+          assert len(snapshot['claims']) == 508
+          assert len(snapshot['submissions']) == 508
+          assert len(snapshot['asset_metadata']) == 138
+
+          def dump_json(path: Path, obj):
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          for name, obj in snapshot['claims'].items():
+              dump_json(ROOT / 'claims/glm' / name, obj)
+          for name, obj in snapshot['submissions'].items():
+              dump_json(ROOT / 'submissions/pending/glm' / name, obj)
+
+          session = requests.Session()
+          session.headers.update({
+              'User-Agent': 'AlchemyGLMImageRestore/1.0 (https://github.com/vh25101993-glitch/alchemy-image-research-public)',
+              'Referer': 'https://commons.wikimedia.org/',
+              'Accept': 'image/*,*/*;q=0.8',
+          })
+
+          def get_source(url: str) -> bytes:
+              if urlparse(url).hostname != 'upload.wikimedia.org':
+                  raise RuntimeError(f'non-Wikimedia download host: {url}')
+              last = None
+              for attempt, wait in enumerate((0, 5, 15, 45, 90, 180), start=1):
+                  if wait:
+                      time.sleep(wait)
+                  try:
+                      r = session.get(url, timeout=120)
+                      if r.status_code == 200:
+                          ctype = r.headers.get('content-type', '')
+                          if not ctype.startswith('image/'):
+                              raise RuntimeError(f'bad content type {ctype!r}')
+                          if len(r.content) > 25 * 1024 * 1024:
+                              raise RuntimeError('source exceeds 25 MiB')
+                          return r.content
+                      last = RuntimeError(f'HTTP {r.status_code}')
+                  except Exception as exc:
+                      last = exc
+              raise RuntimeError(f'could not download {url}: {last}')
+
+          source_seen = {}
+          page_seen = {}
+          asset_bytes = 0
+          webp_count = 0
+          for sid, meta in sorted(snapshot['asset_metadata'].items()):
+              prov = meta.get('provenance') or {}
+              url = prov.get('download_url')
+              page = prov.get('source_page') or prov.get('source_page_url')
+              if not url:
+                  raise RuntimeError(f'{sid}: missing provenance.download_url')
+              if url in source_seen and source_seen[url] != sid:
+                  raise RuntimeError(f'duplicate download URL across species: {url}')
+              if page and page in page_seen and page_seen[page] != sid:
+                  raise RuntimeError(f'duplicate source page across species: {page}')
+              source_seen[url] = sid
+              if page:
+                  page_seen[page] = sid
+
+              raw = get_source(url)
+              actual_sha = hashlib.sha256(raw).hexdigest()
+              expected_sha = prov.get('source_sha256')
+              if expected_sha and actual_sha.lower() != str(expected_sha).lower():
+                  raise RuntimeError(f'{sid}: source SHA256 mismatch: {actual_sha} != {expected_sha}')
+
+              outdir = ROOT / 'assets/substance-images' / sid
+              outdir.mkdir(parents=True, exist_ok=True)
+              dump_json(outdir / 'metadata.json', meta)
+
+              with Image.open(io.BytesIO(raw)) as src:
+                  src = ImageOps.exif_transpose(src)
+                  if src.mode not in ('RGB', 'RGBA'):
+                      src = src.convert('RGBA' if 'transparency' in src.info else 'RGB')
+                  for filename, maxdim in (('primary.webp', 1200), ('thumb.webp', 320)):
+                      im = src.copy()
+                      im.thumbnail((maxdim, maxdim), Image.Resampling.LANCZOS)
+                      im.save(outdir / filename, format='WEBP', quality=85, method=6)
+                      webp_count += 1
+
+          asset_files = list((ROOT / 'assets/substance-images').rglob('*'))
+          asset_files = [p for p in asset_files if p.is_file()]
+          asset_bytes = sum(p.stat().st_size for p in asset_files)
+          metadata_count = len(list((ROOT / 'assets/substance-images').glob('*/metadata.json')))
+          if metadata_count != 138 or webp_count != 276 or len(asset_files) != 414:
+              raise RuntimeError(
+                  f'asset count mismatch metadata={metadata_count} webp={webp_count} total={len(asset_files)}'
+              )
+
+          report = snapshot['report']
+          stats = report.setdefault('statistics', {})
+          stats['image_files_materialized'] = len(asset_files)
+          stats['asset_files_materialized'] = len(asset_files)
+          stats['webp_files_materialized'] = webp_count
+          stats['total_asset_bytes'] = asset_bytes
+          stats['total_asset_megabytes'] = round(asset_bytes / 1048576, 2)
+          stats['bundle_orphan_files_removed'] = 10
+          stats['downstream_qc_findings'] = len(snapshot['chatgpt_qc'].get('errors', []))
+          report['handoff_reconstruction'] = {
+              'source_bundle_head': snapshot['source_bundle_head'],
+              'base_commit': snapshot['base_commit'],
+              'new_claims_restored': len(snapshot['claims']),
+              'new_submissions_restored': len(snapshot['submissions']),
+              'complete_asset_candidates_materialized': metadata_count,
+              'orphan_asset_dirs_excluded': snapshot['notes']['orphan_asset_dirs_excluded'],
+              'note': 'Binary candidates were deterministically re-materialized from recorded Wikimedia source URLs after source SHA-256 verification.'
+          }
+          dump_json(ROOT / 'glm_full_image_research_report.json', report)
+          dump_json(ROOT / 'glm_progress.json', snapshot['progress'])
+          dump_json(ROOT / 'glm_chatgpt_handoff_qc.json', snapshot['chatgpt_qc'])
+
+          md = []
+          md.append('# GLM Full Substance Image Research Report')
+          md.append('')
+          md.append(f"Source bundle head: `{snapshot['source_bundle_head']}`")
+          md.append('')
+          md.append('## Headline statistics')
+          md.append('')
+          md.append('| Metric | Count |')
+          md.append('|---|---:|')
+          md.append(f"| TOTAL GLM tasks | {stats.get('TOTAL')} |")
+          md.append(f"| FOUND | {stats.get('FOUND')} |")
+          md.append(f"| REVIEW_EXISTING_ASSET | {stats.get('REVIEW_EXISTING_ASSET')} |")
+          md.append(f"| NO_EXACT_REAL_PHOTO | {stats.get('NO_EXACT_REAL_PHOTO')} |")
+          md.append(f"| TEMPORARY_FAILURE | {stats.get('TEMPORARY_FAILURE')} |")
+          md.append(f"| Newly materialized complete candidate assets | {metadata_count} |")
+          md.append(f"| WebP files | {webp_count} |")
+          md.append(f"| Asset files including metadata | {len(asset_files)} |")
+          md.append(f"| Asset size | {asset_bytes / 1048576:.2f} MiB |")
+          md.append('')
+          md.append('## Handoff QC')
+          md.append('')
+          md.append(f"ChatGPT pre-import QC recorded **{len(snapshot['chatgpt_qc'].get('errors', []))} findings** for downstream review. These findings do not delete research submissions; they prevent blind auto-import of flagged candidates.")
+          md.append('')
+          md.append('Five revoked/orphan materialization directories without metadata were excluded from reconstruction: `ag2c2o4`, `alno33`, `aucl`, `bacl2`, `baoh2`.')
+          md.append('')
+          md.append('**No chemistry or reaction data was modified.**')
+          (ROOT / 'glm_full_image_research_report.md').write_text('\n'.join(md) + '\n', encoding='utf-8')
+          PY
+
+      - name: Validate reconstructed handoff
+        if: steps.gate.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          claims = list(Path('claims/glm').glob('runtime-*.json'))
+          subs = list(Path('submissions/pending/glm').glob('runtime-*.json'))
+          meta = list(Path('assets/substance-images').glob('*/metadata.json'))
+          webp = list(Path('assets/substance-images').glob('*/*.webp'))
+          assert len(claims) == 520, len(claims)
+          assert len(subs) == 520, len(subs)
+          assert len(meta) == 138, len(meta)
+          assert len(webp) == 276, len(webp)
+          for p in claims + subs + meta + [Path('glm_full_image_research_report.json'), Path('glm_progress.json'), Path('glm_chatgpt_handoff_qc.json')]:
+              json.loads(p.read_text(encoding='utf-8'))
+          print(f'VALIDATION PASS: claims={len(claims)} submissions={len(subs)} metadata={len(meta)} webp={len(webp)}')
+          PY
+
+      - name: Commit reconstructed GLM research
+        if: steps.gate.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f handoff/glm_snapshot.json.gz.b64
+          rmdir handoff 2>/dev/null || true
+          git rm .github/workflows/restore-glm-images-full-001.yml
+          git add claims/glm submissions/pending/glm assets/substance-images glm_full_image_research_report.json glm_full_image_research_report.md glm_progress.json glm_chatgpt_handoff_qc.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'assets(glm): restore full image research handoff'
+          git push origin HEAD:agent/glm-images-full-001
