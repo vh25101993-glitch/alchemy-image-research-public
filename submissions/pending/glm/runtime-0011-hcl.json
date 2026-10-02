@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0011-hcl",
+  "canonical_substance_id": "hcl",
+  "formula_key": "HCl",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.9,
+    "exact_substance_match": false,
+    "match_notes": "Task requires dilute (loang) hydrochloric acid in solution. Every real photograph of hydrochloric acid on Wikimedia Commons depicts concentrated acid or is unverifiable: bottle labels read 35% (Kwas solny.jpg, VLM-verified), 33% (Solna kislina.JPG), 30-33% (Danny S. photo), or explicitly 'steczony'/'conc.' (Hydrochloric acid 02.jpg); Hydrochloric acid 04.jpg shows acid fumes on pH paper; Hydrochloric acid lab-style bottles are P.A. reagent grade. The one beaker photo (Hydrochloric acid 01.jpg) has no machine-readable author or source, so provenance is unclear. Hydrochloric acid 30 percent.jpg is described on its own file page as an unlabeled bottle ('a colorless liquid that could be anything'). Using any of these for the dilute HCl node would be scientifically misleading, so the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for dilute solution",
+    "species_class": "solution",
+    "identity_checks": [
+      "Task is the dilute variant ('loang'); game queue distinguishes loang vs dac (concentrated) acid nodes for H2SO4 and HNO3",
+      "File:Kwas solny.jpg label visually verified to read 'KWAS SOLNY ... min 35%' - concentrated",
+      "File:Solna kislina.JPG label visually verified to read 33% - concentrated",
+      "File:Hydrochloric acid 02.jpg described as 'Kwas solny stezony' (concentrated hydrochloric acid)",
+      "File:Hydrochloric acid 01.jpg has no machine-readable author/source - provenance unclear, cannot be used for FOUND",
+      "File:Hydrochloric acid 30 percent.jpg shows an unlabeled bottle per its own file notes - identity unverifiable"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "hydrochloric acid",
+      "dilute hydrochloric acid",
+      "hydrochloric acid solution",
+      "verdunnte Salzsasure",
+      "Category:Hydrochloric acid (full category member listing)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Hydrochloric_acid",
+      "https://commons.wikimedia.org/wiki/File:Kwas_solny.jpg",
+      "https://commons.wikimedia.org/wiki/File:Solna_kislina.JPG",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_02.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_01.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_03.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_04.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_05.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_30_percent.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_30-33%_by_Danny_S._-_001.jpg",
+      "https://commons.wikimedia.org/wiki/File:Acido_cloridrico.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydrochloric_Acid_(_Hcl).jpg"
+    ],
+    "rejected_candidates": [
+      {"url": "https://commons.wikimedia.org/wiki/File:Kwas_solny.jpg", "reason": "CC0 license and high resolution, but the bottle label was visually verified to read 'KWAS SOLNY ... min 35%' - concentrated HCl, wrong variant for the dilute (loang) task."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Solna_kislina.JPG", "reason": "Label reads 33% hydrochloric acid - concentrated."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_02.jpg", "reason": "Description 'Kwas solny stezony' = concentrated hydrochloric acid."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_30-33%_by_Danny_S._-_001.jpg", "reason": "30-33% is concentrated reagent grade, not dilute."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_30_percent.jpg", "reason": "Described as 30% HCl; file page itself notes the bottle is unlabeled ('could be anything'), so identity is unverifiable."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_04.jpg", "reason": "pH paper shows acid fumes rising from the bottle - characteristic of concentrated HCl."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_01.jpg", "reason": "No machine-readable author or source on the file page; provenance unclear, FOUND not permitted with unclear provenance."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_03.jpg", "reason": "Very low resolution (267x482), label illegible; concentration unverifiable."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_acid_05.jpg", "reason": "Label concentration not readable; low resolution (332x516); lab stock is most likely concentrated."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Acido_cloridrico.jpg", "reason": "P.A. (pro analysis) reagent bottle - typically ~37% concentrated; not identifiable as dilute."},
+      {"url": "https://commons.wikimedia.org/wiki/File:Hydrochloric_Acid_(_Hcl).jpg", "reason": "Handwritten label (possibly reads 'conc'); cluttered background; cannot verify the acid is dilute."}
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "solution_context",
+    "reason": "Dilute hydrochloric acid is visually a colorless aqueous solution and every Commons photograph shows concentrated grades. A generated solution-context image (colorless liquid in a labeled reagent bottle/beaker) is the honest fallback and avoids misrepresenting concentration."
+  }
+}

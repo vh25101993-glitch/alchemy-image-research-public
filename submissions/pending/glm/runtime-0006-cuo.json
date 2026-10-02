@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0006-cuo",
+  "canonical_substance_id": "cuo",
+  "formula_key": "CuO",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "REVIEW_EXISTING_ASSET",
+  "assessment": {
+    "confidence": 0.93,
+    "existing_asset_acceptable": true,
+    "exact_substance_match": true,
+    "real_photo": true,
+    "watermark_free": true,
+    "open_license": true,
+    "visual_form": "black powder",
+    "species_class": "isolable_or_solid",
+    "match_notes": "The task already has an acceptable existing verified asset: File:Copper(II) oxide sample.jpg (Adam Rędzikowski, CC BY-SA 3.0), materialized in this repository as generated/substances/cuo and documented in sources/verified_batch_001.json. Re-verified the Commons file page: description reads 'Copper(II) oxide, CuO'; categories include Copper(II) oxide, Samples of copper compounds and Samples of oxides; license CC BY-SA 3.0 with named author is open and attribution-ready. The photo is a real photograph of a black CuO powder sample, chemically and legally acceptable; no replacement is necessary.",
+    "identity_checks": [
+      "Commons file page description explicitly identifies 'Copper(II) oxide, CuO'",
+      "Commons categories confirm Copper(II) oxide / Samples of oxides",
+      "Author and license verified on file page: Adam Rędzikowski, CC BY-SA 3.0",
+      "Existing repository asset (generated/substances/cuo) carries the same provenance and integrity hashes",
+      "Image depicts black CuO powder, consistent with copper(II) oxide, not Cu2O (red) or other copper phases"
+    ]
+  },
+  "existing_asset": {
+    "provider": "Wikimedia Commons",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Copper(II)_oxide_sample.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Copper%28II%29_oxide_sample.jpg",
+    "file_title": "File:Copper(II) oxide sample.jpg",
+    "author": "Adam Rędzikowski",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "materialized_as": "generated/substances/cuo/primary.webp"
+  },
+  "search_audit": {
+    "queries_used": [
+      "Copper(II) oxide sample (existing asset verification)",
+      "File:Copper(II) oxide sample.jpg (file page re-verification)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/File:Copper(II)_oxide_sample.jpg",
+      "sources/verified_batch_001.json",
+      "generated/substances/cuo/metadata.json",
+      "materialized/manifest.json"
+    ],
+    "rejected_candidates": []
+  }
+}

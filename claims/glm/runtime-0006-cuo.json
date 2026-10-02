@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "task_id": "runtime-0006-cuo",
+  "canonical_substance_id": "cuo",
+  "formula_key": "CuO",
+  "claimed_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "status": "claimed",
+  "notes": "Processing this task in assigned GLM batch glm_batch_001."
+}

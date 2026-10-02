@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0250-nh42hpo4",
+  "canonical_substance_id": "nh42hpo4",
+  "formula_key": "(NH4)2HPO4",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.9,
+    "exact_substance_match": false,
+    "match_notes": "Task requires diammonium hydrogen phosphate in the solution state. The only real photographs of (NH4)2HPO4 on Wikimedia Commons are DAP fertilizer photos: 'DAP (Diammonium Phosphate) Granules (1-3).jpg' (Suyash Dwivedi, CC BY-SA 4.0) showing solid fertilizer granules, and photos of DAP in commercial 1 kg packages. Category:Ammonium hydrogen phosphate contains no solution photographs and no reagent-grade sample photos. Using fertilizer granules would misrepresent both the solution state and the laboratory/reagent context of the game node, so the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for solution state",
+    "species_class": "solution",
+    "identity_checks": [
+      "Task state is solution; the only Commons photos of (NH4)2HPO4 are solid DAP fertilizer granules and packaged fertilizer",
+      "Category:Ammonium hydrogen phosphate contains no solution or reagent photographs",
+      "Fertilizer granules are technical-grade solid material - state and context mismatch for the solution node"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "diammonium hydrogen phosphate",
+      "ammonium phosphate solution",
+      "Category:Ammonium hydrogen phosphate (category member listing)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Ammonium_hydrogen_phosphate",
+      "https://commons.wikimedia.org/wiki/File:DAP_(Diammonium_Phosphate)_Granules_(1).jpg",
+      "https://commons.wikimedia.org/w/index.php?search=diammonium+hydrogen+phosphate&ns6=1"
+    ],
+    "rejected_candidates": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:DAP_(Diammonium_Phosphate)_Granules_(1).jpg",
+        "reason": "CC BY-SA 4.0 real photo, but shows solid fertilizer granules while the task requires the solution state."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:DAP_(Di-Ammonium_Phosphate)_in_a_1_kg_commercial_package_(1).jpg",
+        "reason": "Commercial fertilizer package - solid form, state mismatch."
+      }
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "solution_context",
+    "reason": "No photograph of aqueous (NH4)2HPO4 exists on Commons; the only real photos are solid DAP fertilizer granules. A generated solution-context image (colorless clear solution in a labeled reagent bottle) is the honest fallback."
+  }
+}

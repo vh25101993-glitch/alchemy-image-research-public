@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0012-hno3_dilute",
+  "canonical_substance_id": "hno3_dilute",
+  "formula_key": "HNO3 (l)",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.91,
+    "exact_substance_match": false,
+    "match_notes": "Task requires dilute (loang) nitric acid - a colorless solution. The game also has a separate concentrated HNO3 node (runtime-0658-hno3c, 'Nitric acid (dac)'), so the dilute/concentrated distinction is visually and chemically important. Every real nitric acid photograph on Commons shows concentrated acid: labels verified as 70%, 65%, 56%, 'CONCENTRATED NITRIC ACID' (Nitric acid lab.jpg, VLM-verified) or 'HNO3 conc.' (Salpetersaeure.jpg); several show the yellow coloration or fuming caused by dissolved NO2 (Nitric acid yellow.JPG, fuming variants). No photograph of colorless dilute HNO3 could be verified, so the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for dilute solution",
+    "species_class": "solution",
+    "identity_checks": [
+      "Game queue contains a separate concentrated HNO3 node (runtime-0658-hno3c), so concentration distinction matters",
+      "File:Nitric acid lab.jpg label visually verified to read 'CONCENTRATED NITRIC ACID'",
+      "File:HNO3.JPG bottle visually verified as 56% technical grade with yellow liquid (dissolved NO2)",
+      "File:Salpetersaeure.jpg label verified to read 'HNO3 conc.' with yellow liquid",
+      "File:Kyselina dusicna.PNG label verified to read 65%",
+      "Dilute HNO3 would be colorless - none of the candidate photos show a colorless dilute solution with verifiable concentration"
+    ]
+  },
+  "search_audit": {
+    "queries_used": ["nitric acid","Category:Nitric acid (full category member listing)","nitric acid lab (label verification)","HNO3 (bottle label verification)"],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Nitric_acid",
+      "https://commons.wikimedia.org/wiki/File:Nitric_acid_lab.jpg",
+      "https://commons.wikimedia.org/wiki/File:HNO3.JPG",
+      "https://commons.wikimedia.org/wiki/File:HNO3_Slika2.JPG",
+      "https://commons.wikimedia.org/wiki/File:Salpetersaeure.jpg",
+      "https://commons.wikimedia.org/wiki/File:Kyselina_dusi%C4%8Dn%C3%A1.PNG",
+      "https://commons.wikimedia.org/wiki/File:Kyselina_dusi%C4%8Dn%C3%A1_65%.jpg",
+      "https://commons.wikimedia.org/wiki/File:Nitric_acid_70.jpg",
+      "https://commons.wikimedia.org/wiki/File:Nitric_acid_yellow.JPG",
+      "https://commons.wikimedia.org/wiki/File:Fuming_nitric_acid_40ml.jpg",
+      "https://commons.wikimedia.org/wiki/File:White_Fuming_Nitric_Acid.png",
+      "https://commons.wikimedia.org/wiki/File:Nitricacid.jpg",
+      "https://commons.wikimedia.org/wiki/File:TGI_Nitric_Acid.JPG"
+    ],
+    "rejected_candidates": [
+      {"url":"https://commons.wikimedia.org/wiki/File:Nitric_acid_lab.jpg","reason":"PD and high resolution, but the bottle label was visually verified to read 'CONCENTRATED NITRIC ACID' - wrong variant for the dilute task."},
+      {"url":"https://commons.wikimedia.org/wiki/File:HNO3.JPG","reason":"Bottle verified as 56% technical-grade nitric acid with yellow liquid (dissolved NO2) - concentrated, not dilute."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Salpetersaeure.jpg","reason":"Label reads 'HNO3 conc.'; liquid is yellow - concentrated."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Kyselina_dusi%C4%8Dn%C3%A1.PNG","reason":"Label reads 65% - concentrated."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Kyselina_dusi%C4%8Dn%C3%A1_65%.jpg","reason":"Explicitly 65% - concentrated."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Nitric_acid_70.jpg","reason":"Explicitly 70% - concentrated."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Nitric_acid_yellow.JPG","reason":"Yellow coloration from dissolved NO2 - concentrated/decomposed acid, and it is the wrong look for colorless dilute HNO3."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Fuming_nitric_acid_40ml.jpg","reason":"Fuming nitric acid - concentrated."},
+      {"url":"https://commons.wikimedia.org/wiki/File:White_Fuming_Nitric_Acid.png","reason":"White fuming nitric acid - concentrated specialty grade."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Nitricacid.jpg","reason":"Description 'Rauchende Salpetersaure' (fuming nitric acid) - concentrated; also very low resolution (149x250)."},
+      {"url":"https://commons.wikimedia.org/wiki/File:TGI_Nitric_Acid.JPG","reason":"Shows a distillation apparatus (preparing nitric acid), not a substance sample."}
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "solution_context",
+    "reason": "Dilute nitric acid is a colorless solution, while every Commons photo shows concentrated yellow or fuming acid. A generated solution-context image keeps the dilute node visually distinct from the game's concentrated HNO3 node and is scientifically honest."
+  }
+}

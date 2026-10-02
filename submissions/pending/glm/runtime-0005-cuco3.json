@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0005-cuco3",
+  "canonical_substance_id": "cuco3",
+  "formula_key": "CuCO3",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.93,
+    "exact_substance_match": false,
+    "match_notes": "No real photograph of neutral anhydrous copper(II) carbonate (CuCO3) can be verified on Wikimedia Commons. Category:Copper(II) carbonate contains only 3D ball-and-stick, space-filling and crystal-structure diagrams - no photographs. The only Commons file titled 'Copper(II) carbonate.JPG' (Chemicalinterest, PD) is categorized by the Commons community under 'Basic copper carbonate', i.e. it depicts basic copper(II) carbonate, not neutral CuCO3. All other photograph candidates are explicitly basic copper(II) carbonate samples. Chemically, neutral CuCO3 is not isolable as a stable solid under ambient conditions (it has only been synthesized under high CO2 pressure), so any ordinary 'copper carbonate' sample photo would actually show basic carbonate and would be a scientifically misleading substitute for the game's CuCO3 node.",
+    "visual_form": "none verified",
+    "species_class": "isolable_or_solid",
+    "identity_checks": [
+      "Category:Copper(II) carbonate member list inspected: contains only structural models and diagrams, zero photographs",
+      "File:Copper(II) carbonate.JPG is filed under Category:Basic copper carbonate - identity is basic carbonate, not neutral CuCO3",
+      "All sample-photograph candidates (Copper carbonate basic.jpg, Basic copper(II) carbonate.jpg, Basic Copper(II)-carbonate blue.JPG) are explicitly basic copper(II) carbonate",
+      "Neutral CuCO3 is not stable at ambient pressure/temperature; substituting basic carbonate would misrepresent the substance"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "copper(II) carbonate",
+      "CuCO3",
+      "copper carbonate sample green",
+      "copper(II) carbonate sample powder",
+      "Category:Copper(II) carbonate (category member listing)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/w/index.php?search=copper(II)+carbonate&ns6=1",
+      "https://commons.wikimedia.org/wiki/Category:Copper(II)_carbonate",
+      "https://commons.wikimedia.org/wiki/File:Copper(II)_carbonate.JPG",
+      "https://commons.wikimedia.org/wiki/File:Basic_copper(II)_carbonate.jpg",
+      "https://commons.wikimedia.org/wiki/File:Copper_carbonate_basic.jpg",
+      "https://commons.wikimedia.org/wiki/File:Basic_Copper(II)-carbonate_blue.JPG"
+    ],
+    "rejected_candidates": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Copper(II)_carbonate.JPG",
+        "reason": "Titled 'Copper(II) carbonate' but Commons categorizes it under Basic copper carbonate; depicts basic copper(II) carbonate, not neutral CuCO3."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Basic_copper(II)_carbonate.jpg",
+        "reason": "Explicitly basic copper(II) carbonate sample; not neutral CuCO3."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Copper_carbonate_basic.jpg",
+        "reason": "Explicitly basic copper(II) carbonate; not neutral CuCO3."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Basic_Copper(II)-carbonate_blue.JPG",
+        "reason": "Explicitly basic copper(II) carbonate; not neutral CuCO3."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Category:Copper(II)_carbonate",
+        "reason": "All real members are 2D/3D structural models and crystal-structure diagrams, which are not real photographs."
+      }
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "generated_composition_model",
+    "reason": "No honest real photograph of neutral CuCO3 exists (compound is not isolable under ambient conditions; all 'copper carbonate' photos are basic carbonate). A generated composition model of green copper(II) carbonate is the scientifically honest fallback; a 3D structural model from Commons is available as an alternative if a diagram is preferred."
+  }
+}
