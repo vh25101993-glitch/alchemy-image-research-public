@@ -1,0 +1,55 @@
+name: GLM text handoff
+
+on:
+  push:
+    branches:
+      - handoff/glm-text-stage
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract verified GLM text handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -xzf .handoff/glm-text-stage.tar.gz
+          rm -rf .handoff
+          rm -f .github/workflows/glm-text-handoff.yml
+
+      - name: Sanity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f glm_full_image_research_report.json
+          test -f glm_progress.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('glm_full_image_research_report.json').read_text())
+          assert r['statistics']['TOTAL'] == 520
+          assert r['statistics']['FOUND'] == 140
+          assert r['statistics']['REVIEW_EXISTING_ASSET'] == 2
+          assert r['statistics']['NO_EXACT_REAL_PHOTO'] == 378
+          new_claims=list(Path('claims/glm').glob('runtime-*.json'))
+          new_subs=list(Path('submissions/pending/glm').glob('runtime-*.json'))
+          print('claims',len(new_claims),'submissions',len(new_subs))
+          PY
+
+      - name: Commit and push research branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add claims/glm submissions/pending/glm assets/substance-images glm_full_image_research_report.json glm_full_image_research_report.md glm_progress.json
+          git commit -m 'assets(glm): import full image research text handoff (520 tasks)'
+          git push origin HEAD:refs/heads/agent/glm-images-full-001
