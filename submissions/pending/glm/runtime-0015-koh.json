@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0015-koh",
+  "canonical_substance_id": "koh",
+  "formula_key": "KOH",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.9,
+    "exact_substance_match": false,
+    "match_notes": "Task requires potassium hydroxide in the solution state (the game's KOH node is an aqueous solution). Every real KOH photograph on Wikimedia Commons shows the solid form: Walkerma's PD photo shows KOH pellets, 'Potassium hydrooxide flakes.jpg' shows solid flakes, 'Hydroxyde de potassium.JPG' (Leiem, CC BY-SA 4.0) shows solid analytical-grade KOH labeled KOH>=85.0%, and 'Kaliumhydroxide.JPG' is a low-quality solid photo. Searches for solution forms ('potassium hydroxide solution', 'Kalilauge', 'KOH solution bottle') returned only lichen-microscopy mounts, warning signs, and book scans - no photograph of aqueous KOH. Since a colorless KOH solution photo cannot be verified and solid-form photos would misrepresent the solution state, the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for solution state",
+    "species_class": "solution",
+    "identity_checks": [
+      "Task state is solution; all Commons photos depict solid KOH (pellets, flakes, or solid reagent bottles)",
+      "File:Hydroxyde de potassium.JPG description explicitly says solid analytical-grade KOH (KOH>=85.0% on label)",
+      "Kalilauge (KOH lye) searches return only microscopy mounts, warning signs, and historical book scans",
+      "No labeled KOH-solution container photograph exists on Commons"
+    ]
+  },
+  "search_audit": {
+    "queries_used": ["potassium hydroxide solution","potassium hydroxide","Kalilauge","KOH solution bottle","Category:Potassium hydroxide (full category member listing)"],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Potassium_hydroxide",
+      "https://commons.wikimedia.org/wiki/File:Potassium_hydroxide.jpg",
+      "https://commons.wikimedia.org/wiki/File:Hydroxyde_de_potassium.JPG",
+      "https://commons.wikimedia.org/wiki/File:Kaliumhydroxide.JPG",
+      "https://commons.wikimedia.org/wiki/File:Potassium_hydrooxide_flakes.jpg",
+      "https://commons.wikimedia.org/wiki/File:Warnschild_Kalilauge_(Bahnpark_Augsburg).jpg"
+    ],
+    "rejected_candidates": [
+      {"url":"https://commons.wikimedia.org/wiki/File:Potassium_hydroxide.jpg","reason":"PD (Walkerma), but shows solid KOH pellets while the task requires the solution state."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Hydroxyde_de_potassium.JPG","reason":"CC BY-SA 4.0 and high resolution, but description and label identify solid analytical-grade KOH (KOH>=85.0%) - state mismatch."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Potassium_hydrooxide_flakes.jpg","reason":"Solid KOH flakes - state mismatch."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Kaliumhydroxide.JPG","reason":"Solid KOH, poor image quality (file is in Category:Images of low quality)."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Placard_1814.jpg","reason":"DOT hazard placard for potassium hydroxide solution on a rail tank car - not a substance photograph."}
+    ]
+  },
+  "fallback_recommendation": {"type": "solution_context", "reason": "No photograph of aqueous KOH exists on Commons and solid-form photos would misstate the node's solution state. A generated solution-context image (colorless clear solution in a labeled reagent bottle) is the honest fallback."}
+}

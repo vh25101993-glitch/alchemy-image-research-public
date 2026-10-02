@@ -1,0 +1,62 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0009-h2o",
+  "canonical_substance_id": "h2o",
+  "formula_key": "H2O",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "FOUND",
+  "candidate": {
+    "provider": "Wikimedia Commons",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Glass-of-water.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Glass-of-water.jpg",
+    "file_title": "File:Glass-of-water.jpg",
+    "author": "Derek Jensen (Tysto)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self"
+  },
+  "assessment": {
+    "confidence": 0.95,
+    "exact_substance_match": true,
+    "real_photo": true,
+    "watermark_free": true,
+    "open_license": true,
+    "visual_form": "liquid (glass of water)",
+    "species_class": "liquid",
+    "match_notes": "File:Glass-of-water.jpg is a well-known real photograph of a clear drinking glass about half filled with pure colorless water, shot by Derek Jensen (Tysto, own work, released as PD-self). Visually verified: colorless transparent liquid, clean neutral background, no watermark, sharp focus. It matches the task exactly: substance H2O, state liquid, display name 'nuoc' (water). The half-full glass clearly shows the liquid state and is an iconic, game-friendly representation of water.",
+    "identity_checks": [
+      "Substance is H2O (water); the photo shows plain water in a glass - exact species match",
+      "State matches: task state is liquid; image shows liquid water, not ice or vapor",
+      "File page (PD-self, own work by Derek Jensen/Tysto, 2005-12-10) verified; categories include Glasses of water",
+      "Visual check confirms colorless transparent liquid, no watermark, clean background",
+      "Public-domain license requires no attribution and is fully open"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "glass of water",
+      "demineralized water",
+      "File:Glass-of-water.jpg (file page verification)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/File:Glass-of-water.jpg",
+      "https://commons.wikimedia.org/wiki/File:Glass_of_water,_detail.jpg"
+    ],
+    "rejected_candidates": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Glass_of_water,_detail.jpg",
+        "reason": "Acceptable CC BY-SA 4.0 alternative (Mia Gaitanidis), but lower resolution (726x712) and less iconic than the PD half-full glass."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Blue_glass_with_carbonated_water.jpg",
+        "reason": "Shows carbonated (sparkling) water - different substance variant from plain water."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Electric_plug_in_a_glass_of_water.jpg",
+        "reason": "Gimmick photo (plug in water) - distracting subject, not a clean substance reference."
+      }
+    ]
+  }
+}

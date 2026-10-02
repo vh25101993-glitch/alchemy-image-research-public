@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0019-pbi2",
+  "canonical_substance_id": "pbi2",
+  "formula_key": "PbI2",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "REVIEW_EXISTING_ASSET",
+  "assessment": {
+    "confidence": 0.93,
+    "existing_asset_acceptable": true,
+    "exact_substance_match": true,
+    "real_photo": true,
+    "watermark_free": true,
+    "open_license": true,
+    "visual_form": "golden-yellow precipitated solid",
+    "species_class": "isolable_or_solid",
+    "match_notes": "The task already has an acceptable existing verified asset: File:Lead(II) iodide sample.jpg (Adam Rędzikowski, CC BY-SA 4.0), materialized in this repository as generated/substances/pbi2 and documented in sources/verified_batch_001.json. Re-verified the Commons file page: description reads 'Sample of precipitated lead(II) iodide'; category Lead(II) iodide; license CC BY-SA 4.0 with named author. The photograph shows the characteristic bright golden-yellow PbI2 solid. The task node is the solid isolable salt, which matches the precipitated sample exactly. No replacement is necessary.",
+    "identity_checks": [
+      "Commons file page description explicitly identifies 'Sample of precipitated lead(II) iodide'",
+      "Commons category confirms Lead(II) iodide",
+      "Author and license verified on file page: Adam Rędzikowski, CC BY-SA 4.0",
+      "Existing repository asset (generated/substances/pbi2) carries the same provenance and integrity hashes",
+      "Golden-yellow precipitated solid matches PbI2's known appearance (not the colorless/mistaken PbCl2 or orange HgI2)"
+    ]
+  },
+  "existing_asset": {
+    "provider": "Wikimedia Commons",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide_sample.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Lead%28II%29_iodide_sample.jpg",
+    "file_title": "File:Lead(II) iodide sample.jpg",
+    "author": "Adam Rędzikowski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "materialized_as": "generated/substances/pbi2/primary.webp"
+  },
+  "search_audit": {
+    "queries_used": [
+      "Lead(II) iodide sample (existing asset verification)",
+      "File:Lead(II) iodide sample.jpg (file page re-verification)",
+      "File:Lead(II) iodide.JPG (materialized manifest cross-check)"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide_sample.jpg",
+      "https://commons.wikimedia.org/wiki/File:Lead(II)_iodide.JPG",
+      "sources/verified_batch_001.json",
+      "generated/substances/pbi2/metadata.json",
+      "materialized/manifest.json"
+    ],
+    "rejected_candidates": []
+  }
+}

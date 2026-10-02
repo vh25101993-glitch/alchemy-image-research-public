@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0248-nh42co3",
+  "canonical_substance_id": "nh42co3",
+  "formula_key": "(NH4)2CO3",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.9,
+    "exact_substance_match": false,
+    "match_notes": "Task requires ammonium carbonate in the solution state. The real ammonium carbonate photographs on Commons (Ammonium Carbonate.jpg CC BY-SA 2.0 from Flickr; Ammonium carbonate.JPG PD by Chemicalinterest; Uhlicitan amonny.JPG) all show the solid chunky material. None shows an aqueous ammonium carbonate solution, so the solution-state requirement cannot be met. Additionally, ordinary commercial 'ammonium carbonate' solid is a mixture of ammonium bicarbonate and ammonium carbamate rather than pure (NH4)2CO3, which would weaken even a solid-state claim. Since using the solid photos would misrepresent the required solution state, the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for solution state",
+    "species_class": "solution",
+    "identity_checks": [
+      "Task state is solution; all Commons ammonium carbonate photos show the solid material",
+      "Ammonium Carbonate.jpg is a Flickr-sourced photo of solid chunks over a black background - state mismatch",
+      "Commercial ammonium carbonate is typically an NH4HCO3/ammonium carbamate mixture, adding identity uncertainty",
+      "No solution-specific photograph found in English or German searches"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "ammonium carbonate",
+      "ammonium carbonate solution"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Ammonium_carbonate",
+      "https://commons.wikimedia.org/wiki/File:Ammonium_Carbonate.jpg",
+      "https://commons.wikimedia.org/wiki/File:Ammonium_carbonate.JPG",
+      "https://commons.wikimedia.org/wiki/File:Uhli%C4%8Ditan_amonn%C3%BD.JPG"
+    ],
+    "rejected_candidates": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Ammonium_Carbonate.jpg",
+        "reason": "Real CC BY-SA 2.0 photo of ammonium carbonate, but it shows the solid material while the task requires the solution state; commercial material is also a bicarbonate/carbamate mixture rather than pure (NH4)2CO3."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Ammonium_carbonate.JPG",
+        "reason": "PD photo of solid ammonium carbonate - state mismatch."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Uhli%C4%8Ditan_amonn%C3%BD.JPG",
+        "reason": "Solid ammonium carbonate sample - state mismatch."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Ammonium-carbonate-3D-balls.png",
+        "reason": "3D structural model - not a real photograph."
+      }
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "solution_context",
+    "reason": "No photograph of aqueous ammonium carbonate exists on Commons and the available solid photos would misstate the node's solution state. A generated solution-context image (colorless solution in a labeled bottle) is the honest fallback."
+  }
+}

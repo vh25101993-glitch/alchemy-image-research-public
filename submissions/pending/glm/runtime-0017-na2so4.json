@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0017-na2so4",
+  "canonical_substance_id": "na2so4",
+  "formula_key": "Na2SO4",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.9,
+    "exact_substance_match": false,
+    "match_notes": "Task requires sodium sulfate in the solution state (anhydrous Na2SO4 in aqueous solution). No photograph of sodium sulfate solution exists on Wikimedia Commons. All real photos show solid forms: Sodium sulfate powder.JPG (solid powder), Fallung (Natriumsulfat).jpg (solid precipitated from a supersaturated solution), HJS Na2SO4 crystals, a mineral specimen from Meyghan lake, and Glauber's salt photos which are additionally the decahydrate Na2SO4.10H2O (hydrate mismatch versus the anhydrous formula). Using any of these would misrepresent the required solution state, so the honest result is NO_EXACT_REAL_PHOTO.",
+    "visual_form": "none verified for solution state",
+    "species_class": "solution",
+    "identity_checks": [
+      "Task state is solution with formula Na2SO4 (anhydrous); no Commons photo shows aqueous sodium sulfate",
+      "Glauber's salt photos (Granulat/Decahydrat) are sodium sulfate decahydrate - hydrate mismatch as well as solid state",
+      "Fallung (Natriumsulfat).jpg and HJS Na2SO4 photos show crystallized solid, not the solution",
+      "German and English solution-specific searches returned no solution photographs"
+    ]
+  },
+  "search_audit": {
+    "queries_used": ["sodium sulfate solution","sodium sulfate","Natriumsulfat Losung","sodium sulfate aqueous"],
+    "sources_checked": [
+      "https://commons.wikimedia.org/wiki/Category:Sodium_sulfate",
+      "https://commons.wikimedia.org/wiki/File:Sodium_sulfate_powder.JPG",
+      "https://commons.wikimedia.org/wiki/File:F%C3%A4llung_(Natriumsulfat).jpg",
+      "https://commons.wikimedia.org/wiki/File:Glaubersalz_(Granulat).jpg",
+      "https://commons.wikimedia.org/wiki/File:Glaubersalz_(Decahydrat).jpg",
+      "https://commons.wikimedia.org/wiki/File:Sodium_sulfate_mineral_in_meyghan_lake.JPG",
+      "https://commons.wikimedia.org/wiki/File:HJS_Na2SO4-01112003-1.jpg"
+    ],
+    "rejected_candidates": [
+      {"url":"https://commons.wikimedia.org/wiki/File:Sodium_sulfate_powder.JPG","reason":"Solid sodium sulfate powder - state mismatch (task requires solution)."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Glaubersalz_(Granulat).jpg","reason":"Glauber's salt = sodium sulfate decahydrate (Na2SO4.10H2O) - both hydrate mismatch and solid state."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Glaubersalz_(Decahydrat).jpg","reason":"Sodium sulfate decahydrate crystals - hydrate and state mismatch."},
+      {"url":"https://commons.wikimedia.org/wiki/File:F%C3%A4llung_(Natriumsulfat).jpg","reason":"Solid sodium sulfate precipitated out of a supersaturated solution - shows the solid, not a solution."},
+      {"url":"https://commons.wikimedia.org/wiki/File:HJS_Na2SO4-01112003-1.jpg","reason":"Single crystals of sodium sulfate grown from aqueous solution - solid form."},
+      {"url":"https://commons.wikimedia.org/wiki/File:Sodium_sulfate_mineral_in_meyghan_lake.JPG","reason":"Mineral (thenardite) specimen - solid, mineral phase rather than reagent solution."}
+    ]
+  },
+  "fallback_recommendation": {"type": "solution_context", "reason": "No photograph of aqueous Na2SO4 exists on Commons; available photos are solid or decahydrate (Glauber's salt) forms that would misstate both species and state. A generated solution-context image (colorless clear solution) is the honest fallback."}
+}

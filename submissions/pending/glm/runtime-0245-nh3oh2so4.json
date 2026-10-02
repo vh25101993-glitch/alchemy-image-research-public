@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "task_id": "runtime-0245-nh3oh2so4",
+  "canonical_substance_id": "nh3oh2so4",
+  "formula_key": "(NH3OH)2SO4",
+  "submitted_by": {
+    "model": "glm",
+    "agent_id": "glm-web-5828d4ba"
+  },
+  "result_type": "NO_EXACT_REAL_PHOTO",
+  "assessment": {
+    "confidence": 0.92,
+    "exact_substance_match": false,
+    "match_notes": "Hydroxylammonium sulfate ((NH3OH)2SO4, the hydroxylamine salt of sulfuric acid) has no real photograph on Wikimedia Commons. Searches for 'hydroxylammonium sulfate', 'hydroxylamine sulfate' and 'hydroxylamine sulfate salt' returned only 2D structural diagrams and 3D ball-and-stick / space-filling / crystal-structure models of the [NH3OH]+ cation and sulfate anion. No sample photo, bottle photo, or crystal photograph of this reagent exists. The honest result is NO_EXACT_REAL_PHOTO; a wrong FOUND (e.g. substituting ammonium sulfate or another white salt) would be misleading.",
+    "visual_form": "none verified",
+    "species_class": "isolable_or_solid",
+    "identity_checks": [
+      "All Commons search results for hydroxylammonium sulfate are 2D/3D structural models, not photographs",
+      "Cross-checked alternate name 'hydroxylamine sulfate' - same result set, photographs absent",
+      "No visually similar white-salt substitute would be an honest match for this specific compound"
+    ]
+  },
+  "search_audit": {
+    "queries_used": [
+      "hydroxylammonium sulfate",
+      "hydroxylamine sulfate",
+      "hydroxylamine sulfate salt"
+    ],
+    "sources_checked": [
+      "https://commons.wikimedia.org/w/index.php?search=hydroxylammonium+sulfate&ns6=1",
+      "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-2D-A.png",
+      "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-3D-balls-ionic.png",
+      "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-3D-vdW.png",
+      "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-xtal-3D-balls.png"
+    ],
+    "rejected_candidates": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-3D-balls-ionic.png",
+        "reason": "Ball-and-stick structural model - a diagram, not a real photograph."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Hydroxylammonium-sulfate-2D-A.png",
+        "reason": "2D structural diagram of the ions - not a real photograph."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Bis(hydroxylammonium)sulfaat.png",
+        "reason": "Structural representation - not a real photograph."
+      }
+    ]
+  },
+  "fallback_recommendation": {
+    "type": "generated_composition_model",
+    "reason": "No real photograph of hydroxylammonium sulfate exists on Commons - only structural diagrams. A generated composition model of the white crystalline laboratory reagent is the honest fallback; verified Commons 2D/3D structural diagrams of this exact compound are available as an alternative."
+  }
+}
